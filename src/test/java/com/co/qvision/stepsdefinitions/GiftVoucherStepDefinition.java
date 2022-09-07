@@ -1,6 +1,8 @@
 package com.co.qvision.stepsdefinitions;
 
+import com.co.qvision.models.GiftVoucher;
 import com.co.qvision.questions.VerifyGiftVoucher;
+import com.co.qvision.tasks.GiftVoucherChange;
 import com.co.qvision.tasks.GiftVoucherInformation;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -13,6 +15,8 @@ import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.thucydides.core.annotations.Managed;
 import org.hamcrest.Matchers;
 import org.openqa.selenium.WebDriver;
+
+import java.util.List;
 
 import static net.serenitybdd.screenplay.actors.OnStage.*;
 
@@ -42,5 +46,18 @@ public class GiftVoucherStepDefinition {
     public void he_will_bring_up_the_Gift_Voucher_detail_information() {
         theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerifyGiftVoucher.verifyGiftVoucher(),
                 Matchers.equalTo(Boolean.FALSE)));
+    }
+
+    //cambiar precio
+    @When("^he clicks on Gift Voucher and he can change the cost of the voucher to and add it to the shopping cart$")
+    public void he_clicks_on_Gift_Voucher_and_he_can_change_the_cost_of_the_voucher_to_and_add_it_to_the_shopping_cart(List<GiftVoucher> giftVoucherList) {
+        GiftVoucher giftVoucher;
+        giftVoucher = giftVoucherList.get(0);
+        theActorInTheSpotlight().attemptsTo(GiftVoucherChange.giftVoucherChange(giftVoucher));
+    }
+
+    @Then("^he will verify the voucher is in the shopping cart$")
+    public void he_will_verify_the_voucher_is_in_the_shopping_cart() {
+        ;
     }
 }
