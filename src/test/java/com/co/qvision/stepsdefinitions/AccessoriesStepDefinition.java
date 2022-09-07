@@ -35,12 +35,13 @@ public class AccessoriesStepDefinition {
 
     }
 
+    //Anotacion Given para indicar que el actor fue capaz de abrir la url especificada en el archivo feature
     @Given("^that enter on the web site \"([^\"]*)\"$")
     public void thatEnterOnTheWebSite(String url) {
         theActorInTheSpotlight().wasAbleTo(Open.url(url));
     }
 
-
+    //Anotacion Manage para indicar que el actor realiza la tarea de comprar un articulo del modulo accesorios
     @When("^he clicks on the accessories module and click buy now to the secoxnd item$")
     public void heClicksOnTheAccessoriesModuleAndClickBuyNowToTheSecoxndItem(List<DataAccessories> dataAccessoriesList) throws InterruptedException {
 
@@ -50,6 +51,8 @@ public class AccessoriesStepDefinition {
         Thread.sleep(1000);
     }
 
+    //Anotacion Then para indicar que se debe validar que la compra fue realizada con exito
+    //El pago exitoso no está documemtado en el plan de pruebas, así que no se automatiza.
     @Then("^he will buy the accessory product successfully$")
     public void heWillBuyTheAccessoryProductSuccessfully() {
     theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerifyBuyAccessories.inThePage(),

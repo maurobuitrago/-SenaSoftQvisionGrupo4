@@ -24,7 +24,7 @@ public class AccessoriesPage {
 
 
 
-    //Mapeo de los datos de facturación
+    //Mapeo de los elementos para diligenciar datos de facturación
     public static final Target TXT_NAME = Target.the("Ingresa nombre").located(By.xpath("//*[@id='billing_first_name']"));
     public static final Target TXT_LASTNAME = Target.the("Ingresa apellidos").located(By.xpath("//*[@id='billing_last_name']"));
     public static final Target CHECK_F = Target.the("Checkbox femenino").located(By.xpath("//*[@id='billing_gender_field']/span/label[3]"));
@@ -33,7 +33,6 @@ public class AccessoriesPage {
     public static final Target NUM_IDENTITY = Target.the("Ingresa numero de doc").located(By.xpath("//*[@id='billing_user_login']"));
     public static final Target EMAIL = Target.the("Ingresa correo").located(By.xpath("//*[@id='billing_email']"));
     public static final Target TELEPHONE = Target.the("Ingresa telefono").located(By.xpath("//*[@id='billing_phone']"));
-
 
     public static final Target DIRECTION = Target.the("Ingresa direccion").located(By.xpath("//*[@id='billing_address_1']"));
     public static final Target CODE_POSTAL = Target.the("Ingresa codigo postal").located(By.xpath("//*[@id='billing_postcode']"));
