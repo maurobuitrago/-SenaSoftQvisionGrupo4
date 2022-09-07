@@ -1,9 +1,12 @@
 package com.co.qvision.stepsdefinitions;
 
 import com.co.qvision.models.Credentials;
+import com.co.qvision.models.Handbag;
 import com.co.qvision.questions.VerifyAddBagToCart;
+import com.co.qvision.questions.VerifyHandbagWishList;
 import com.co.qvision.tasks.AddBagToCart;
 import com.co.qvision.tasks.CorrectLogin;
+import com.co.qvision.tasks.HandbagAddList;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -53,5 +56,19 @@ public class HandbagStepDefinition {
     public void heWillVerifyThatTheBagsProductIsInTheShoppingCart() {
         theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerifyAddBagToCart.inThePage(),
                 Matchers.equalTo("Bolso bombonera en cuero grabado color verde esmeralda")));
+    }
+
+    //Añadir a la lista de deseos
+    @When("^he clicks on Handbags-wallets he can change the color of the second item and add it to my wishlist$")
+    public void heClicksOnHandbagsWalletsHeCanChangeTheColorOfTheSecondItemAndAddItToMyWishlist(List<Handbag> handbagsList) {
+        Handbag handbag;
+        handbag = handbagsList.get(0);
+        theActorInTheSpotlight().attemptsTo(HandbagAddList.handbagAddList(handbag));
+    }
+
+    @Then("^he will verify that in the My account-wishlist module is the product Handbags$")
+    public void heWillVerifyThatInTheMyAccountWishlistModuleIsTheProductHandbags() {
+        theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerifyHandbagWishList.verifyHandbagWishList(),
+                Matchers.equalTo(Boolean.TRUE)));
     }
 }

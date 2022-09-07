@@ -10,7 +10,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/handbag.feature",
         glue = "com/co/qvision/stepsdefinitions",
-        snippets = SnippetType.CAMELCASE
+        snippets = SnippetType.CAMELCASE,
+        tags = {"@AddWishList"}
 )
 public class HandbagRunner {
 }
