@@ -29,7 +29,7 @@ public class ShoesStepDefinition {
     @Before
     public void setIni(){
         setTheStage(new OnlineCast());
-        theActorCalled("Luna");
+        theActorCalled("Mauro");
         theActorInTheSpotlight().can(BrowseTheWeb.with(hisBrowser));
     }
 
