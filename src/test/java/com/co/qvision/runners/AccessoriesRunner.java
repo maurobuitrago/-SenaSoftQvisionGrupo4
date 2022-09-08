@@ -9,8 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/accessories.feature",
         glue = "com/co/qvision/stepsdefinitions",
-        snippets = SnippetType.CAMELCASE,
-        tags = {"@AddAccessoriesToCard"}
+        snippets = SnippetType.CAMELCASE
 )
 public class AccessoriesRunner {
 }

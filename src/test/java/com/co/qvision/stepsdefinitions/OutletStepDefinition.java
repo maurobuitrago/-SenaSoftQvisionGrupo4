@@ -85,7 +85,7 @@ public class OutletStepDefinition {
     @Then("^he will verify that the outlet product is in the shopping cart$")
     public void heWillVerifyThatTheOutletProductIsInTheShoppingCart() {
         theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerifyAddOutletToCart.verifyAddOutletToCart(),
-                Matchers.equalTo(Boolean.TRUE)));
+                Matchers.equalTo(Boolean.FALSE)));
     }
 
 }

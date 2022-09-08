@@ -55,7 +55,7 @@ public class OutletPage {
     public static final Target BTN_SEECART = Target.the("Botón de opción ver carrito").located(By.xpath("//a[text()='Ver carrito']"));
     public static final Target TXT_VERIFYITEM3 = Target.the("Campo de texto que verifica el nombre del artículo 3").located(By.xpath("//tr/td[3]/a"));
     public static final Target SELECT_SIZE = Target.the("Coloca la talla que desea").located(By.xpath("//*[@id='pa_talla']"));
-    public static final Target SELECT_NUMBER = Target.the("Selecciona la talla 37").located(By.xpath("//*[@id='pa_talla']/option[5]"));
+    public static final Target SELECT_NUMBER = Target.the("Selecciona la talla 37").located(By.xpath("//*[@id='pa_talla']/option[3]"));
 
 
 
