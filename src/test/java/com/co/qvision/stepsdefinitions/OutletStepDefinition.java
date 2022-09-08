@@ -1,8 +1,11 @@
 package com.co.qvision.stepsdefinitions;
 
 import com.co.qvision.models.DataOutlet;
+import com.co.qvision.questions.VerifyAddOutletToCart;
 import com.co.qvision.questions.VerifyBuyOutlet;
+
 import com.co.qvision.questions.VerifyObtainInformationOutlet;
+import com.co.qvision.tasks.AddOutletToCart;
 import com.co.qvision.tasks.BuyProductOnSale;
 import com.co.qvision.tasks.ObtainInformationOutlet;
 import cucumber.api.java.Before;
@@ -69,8 +72,20 @@ public class OutletStepDefinition {
     //Deberá imprimir la informacion de los precios del producto en consola
     @Then("^it should display the output product price information in the console$")
     public void itShouldDisplayTheOutputProductPriceInformationInTheConsole() {
-
+        theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerifyObtainInformationOutlet.inThePage(),
+                Matchers.equalTo("Baletas color naranja fuego en cuero")));
     }
 
+    //Añadir producto al carrito
+    @When("^he clicks on the outlet module and add the third product to the add to cart$")
+    public void heClicksOnTheOutletModuleAndAddTheThirdProductToTheAddToCart() {
+        theActorInTheSpotlight().attemptsTo(AddOutletToCart.addOutletToCart());
+    }
+
+    @Then("^he will verify that the outlet product is in the shopping cart$")
+    public void heWillVerifyThatTheOutletProductIsInTheShoppingCart() {
+        theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerifyAddOutletToCart.verifyAddOutletToCart(),
+                Matchers.equalTo(Boolean.TRUE)));
+    }
 
 }
