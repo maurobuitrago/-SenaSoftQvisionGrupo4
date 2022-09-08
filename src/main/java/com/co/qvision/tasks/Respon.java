@@ -17,6 +17,8 @@ public class Respon implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+
+        //el actor extrae los datos del modulo resposabilidad social
         actor.attemptsTo(Click.on(MENUU));
         actor.attemptsTo(Click.on(MODULE_RESPON));
         actor.attemptsTo(Scroll.to(TXT_VALIDATE));
