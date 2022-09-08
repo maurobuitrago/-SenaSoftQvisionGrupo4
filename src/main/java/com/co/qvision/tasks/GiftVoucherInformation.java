@@ -18,6 +18,7 @@ public class GiftVoucherInformation implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        //el actor extrae el dato del detalle y lo muestra en consola
         actor.attemptsTo(Click.on(MENU));
         actor.attemptsTo(Click.on(MODULE_GIFTVOUCHER));
         System.out.println(Text.of(INFORMATION_GIFTVOUCHER).viewedBy(actor).asString());

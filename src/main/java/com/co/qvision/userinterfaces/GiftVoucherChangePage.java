@@ -5,12 +5,13 @@ import org.openqa.selenium.By;
 
 public class GiftVoucherChangePage {
 
+    //Mapeo de inicio de sesion
     public static final Target BTN_ACCOUNNT = Target.the("Botón opción acceder a inicio de sesión").located(By.xpath("//div[@class= 'myaccount']/a"));
-
     public static final Target TXT_IDENTIFICATIONN = Target.the("Campo de texto para número de identificación").located(By.xpath("//input[@id='username']"));
     public static final Target TXT_PASSWORDD = Target.the("Campo de texto para contraseña").located(By.xpath("//input[@id='password']"));
     public static final Target BTN_ACCESS = Target.the("Botón opción acceder a inicio de sesión").located(By.xpath("//button[text()= 'Acceder']"));
 
+    //Mapeo del cambio de precio del bono de regalo y el agregado a la lista
     public static final Target MENU = Target.the("Abre el menu de los modulos").located(By.xpath("//*[@id='burger']"));
     public static final Target MODULE_GIFTVOUCHER = Target.the("Abre el modulo bono de regalos").located(By.xpath("//*[@id='menu-item-488']/a"));
     public static final Target PRICE = Target.the("Despliega los precios").located(By.xpath("//*[@id='pa_valor-bono-regalo']"));
