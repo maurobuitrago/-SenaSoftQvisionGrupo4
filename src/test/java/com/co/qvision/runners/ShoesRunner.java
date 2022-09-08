@@ -7,7 +7,8 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         features = "src/test/resources/features/shoes.feature",
-        glue = "com/co/qvision/stepsdefinitions"
+        glue = "com/co/qvision/stepsdefinitions",
+        tags = {"@AddShoesToCard"}
 
 )
 public class ShoesRunner {

@@ -2,7 +2,9 @@ package com.co.qvision.stepsdefinitions;
 
 import com.co.qvision.models.Credentials;
 import com.co.qvision.models.Shoes;
+import com.co.qvision.questions.VerifyAddShoesToCart;
 import com.co.qvision.questions.VerifyBuyShoes;
+import com.co.qvision.tasks.AddShoesToCart;
 import com.co.qvision.tasks.BuyShoes;
 import com.co.qvision.tasks.CorrectLogin;
 import cucumber.api.java.Before;
@@ -49,5 +51,17 @@ public class ShoesStepDefinition {
     public void he_will_buy_the_shoes_product_successfully() {
         theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerifyBuyShoes.verifyBuyShoes(),
                 Matchers.equalTo(Boolean.TRUE)));
+    }
+    //Anotacion Manage para indicar que el actor realiza la tarea de añadir un zapato al carrito de compras
+    @When("^he clicks on the Shoes-Boots module and adds the third product to add to the cart$")
+    public void he_clicks_on_the_Shoes_Boots_module_and_adds_the_third_product_to_add_to_the_cart() {
+        theActorInTheSpotlight().attemptsTo(AddShoesToCart.inThePage());
+    }
+
+    //Anotacion Then para indicar que se debe validar que el producto se añadió satisfactoriamente en la sección "ver carrito"
+    @Then("^he should see the shoe product in the shopping cart$")
+    public void he_should_see_the_shoe_product_in_the_shopping_cart() {
+        theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerifyAddShoesToCart.inThePage(),
+                Matchers.equalTo("Botines chelsea track color negro ónix en cuero - 35")));
     }
 }
