@@ -10,8 +10,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/outlet.feature",
         glue = "com/co/qvision/stepsdefinitions",
-        snippets = SnippetType.CAMELCASE,
-        tags = {"@"}
+        snippets = SnippetType.CAMELCASE
 )
 public class OutletRunner {
 }

@@ -2,6 +2,7 @@ package com.co.qvision.stepsdefinitions;
 
 import com.co.qvision.models.DataOutlet;
 import com.co.qvision.questions.VerifyBuyOutlet;
+import com.co.qvision.questions.VerifyObtainInformationOutlet;
 import com.co.qvision.tasks.BuyProductOnSale;
 import com.co.qvision.tasks.ObtainInformationOutlet;
 import cucumber.api.java.Before;
