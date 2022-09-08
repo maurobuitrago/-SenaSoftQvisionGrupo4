@@ -5,11 +5,12 @@ import org.openqa.selenium.By;
 
 public class HandbagWishListPage {
 
-
+    //Mapeo inicio de sesion
     public static final Target BTN_ACCOUNT = Target.the("Botón opción acceder a inicio de sesión").located(By.xpath("//div[@class= 'myaccount']/a"));
     public static final Target TXT_IDENTIFICATION = Target.the("Campo de texto para número de identificación").located(By.xpath("//input[@id='username']"));
     public static final Target TXT_PASSWORD = Target.the("Campo de texto para contraseña").located(By.xpath("//input[@id='password']"));
     public static final Target BTN_ACCESS = Target.the("Botón opción acceder a inicio de sesión").located(By.xpath("//button[text()= 'Acceder']"));
+    //Mapeo de añadir producto a la lista de deseos
     public static final Target MENU = Target.the("Abre el menu de los modulos").located(By.xpath("//*[@id='burger']"));
     public static final Target MODULE_HANDBAG = Target.the("Abre el modulo bolsos").located(By.xpath("//*[@id='menu-item-17054']"));
     public static final Target SELECT_WALLETS = Target.the("Abre la seccion de carteras").located(By.xpath("//*[@id='menu-item-55869']/a"));
