@@ -5,23 +5,20 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Scroll;
+import net.serenitybdd.screenplay.questions.Text;
 
-import static com.co.qvision.userinterfaces.BeltsPage.*;
+import static com.co.qvision.userinterfaces.AccessoriesToCartPage.*;
 
-public class BeltsToCart implements Task {
-
-    public static BeltsToCart beltsToCart(){
-        return Tasks.instrumented(BeltsToCart.class);
+public class AccessoriesToCart implements Task {
+    public static AccessoriesToCart accessoriesToCart(){
+        return Tasks.instrumented(AccessoriesToCart.class);
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Click.on(MENU));
-        actor.attemptsTo(Click.on(MODULE_BELTS));
+        actor.attemptsTo(Click.on(MODULE_ACCESSORIES));
         actor.attemptsTo(Click.on(BTN_ITEM3));
-        actor.attemptsTo(Scroll.to(SELECT_SIZE));
-        actor.attemptsTo(Click.on(SELECT_SIZE));
-        actor.attemptsTo(Click.on(SELECT_NUMBER));
         actor.attemptsTo(Scroll.to(BTN_ADDTOCART));
         actor.attemptsTo(Click.on(BTN_ADDTOCART));
         try {
@@ -32,7 +29,6 @@ public class BeltsToCart implements Task {
         actor.attemptsTo(Click.on(BTN_SHOPPINGCART));
         actor.attemptsTo(Click.on(BTN_SEECART));
 
-        //Imprimimos en consola el texto del nombre del artículo agregado al carrito de compras
-        System.out.println(TXT_VERIFYITEM3.resolveFor(actor).getText());
+        System.out.println(Text.of(TXT_VERIFYITEM3).viewedBy(actor).asString());
     }
 }

@@ -18,6 +18,6 @@ public class AccountPage {
     public static final Target BTN_ORDER = Target.the("Botón opción Cerrar sesión").located(By.xpath("//a[text()='Pedidos']"));
 
     public static final Target BTN_SEE = Target.the("Botón opción ver del primer pedido").located(By.xpath("//tr[1]/td/a[text()='Ver']"));
-    public static final Target TXT_VERIFYINFORMATION = Target.the("Texto verificación de la infromacion del primer pedido").located(By.xpath("//div[@id='main']/div/div/div/nav/ul/li/div/section[1]"));
+    public static final Target TXT_VERIFYINFORMATION = Target.the("Texto verificación de la infromacion del primer pedido").located(By.xpath("//*[@id='content']/div/div/nav/ul/li[1]/div/p"));
 
 }

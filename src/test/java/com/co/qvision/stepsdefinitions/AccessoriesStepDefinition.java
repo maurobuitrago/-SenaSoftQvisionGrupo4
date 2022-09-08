@@ -1,7 +1,9 @@
 package com.co.qvision.stepsdefinitions;
 
 import com.co.qvision.models.DataAccessories;
+import com.co.qvision.questions.VerifyAddAccessoriesToCart;
 import com.co.qvision.questions.VerifyBuyAccessories;
+import com.co.qvision.tasks.AccessoriesToCart;
 import com.co.qvision.tasks.BuyAccessories;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -59,4 +61,28 @@ public class AccessoriesStepDefinition {
             Matchers.equalTo(Boolean.TRUE)));
     }
 
+
+    //Añadir al carrito
+    @When("^he clicks on the accessories module and add the third product to the add to cart module, he will verify that the handbags product is in the shopping cart$")
+    public void heClicksOnTheAccessoriesModuleAndAddTheThirdProductToTheAddToCartModuleHeWillVerifyThatTheHandbagsProductIsInTheShoppingCart() {
+        theActorInTheSpotlight().attemptsTo(AccessoriesToCart.accessoriesToCart());
+    }
+
+
+    @Then("^he will verify that the bag product is in the shopping cart$")
+    public void heWillVerifyThatTheBagProductIsInTheShoppingCart() {
+        theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerifyAddAccessoriesToCart.verifyAddAccessoriesToCart(),
+                Matchers.equalTo(Boolean.TRUE)));
+    }
+
+    //Compra de un producto del modulo de cinturones
+    @When("^he clicks on the free belts module and click \"([^\"]*)\" to the second item$")
+    public void he_clicks_on_the_free_belts_module_and_click_to_the_second_item(String arg1) {
+
+    }
+
+    @Then("^he will buy the belts product successfully$")
+    public void he_will_buy_the_belts_product_successfully() {
+
+    }
 }
