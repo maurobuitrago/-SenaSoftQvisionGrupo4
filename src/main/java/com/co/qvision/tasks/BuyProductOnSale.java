@@ -40,7 +40,13 @@ public class BuyProductOnSale implements Task {
 
         actor.attemptsTo(Scroll.to(OutletPage.SELECT_TALLA));
         actor.attemptsTo(Click.on(OutletPage.SELECT_TALLA));
-        actor.attemptsTo(Click.on(OutletPage.SELECT_LIST40));
+        actor.attemptsTo(Click.on(OutletPage.SELECT_LIST36));
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
 
         actor.attemptsTo(Scroll.to(OutletPage.BTN_BUYNOW));

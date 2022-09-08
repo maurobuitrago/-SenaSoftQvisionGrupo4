@@ -25,7 +25,7 @@ public class OutletPage {
     //Mapeo de los elementos para realizar la compra éxitosa del segundo producto del módulo Outlet
     public static final Target BTN_ITEM3 = Target.the("Botón de opción segundo artículo").located(By.xpath("//div[@id='wrapper']/div[5]/ul/li[3]/a"));
     public static final Target SELECT_TALLA = Target.the("Lista desplegable para seleccionar la talla de zapato").located(By.xpath("//select[@id='pa_talla']"));
-    public static final Target SELECT_LIST40 = Target.the("Opción talla 37 de la lista desplegable").located(By.xpath("//option[@value='40']"));
+    public static final Target SELECT_LIST36 = Target.the("Opción talla 37 de la lista desplegable").located(By.xpath("//option[@value='36']"));
 
     public static final Target BTN_BUYNOW = Target.the("Botón de opción comprar ahora").located(By.xpath("//a[text()='Comprar Ahora']"));
     public static final Target BTN_FINISHBUY = Target.the("Botón de opción finalizar compra").located(By.xpath("//div[@class='wc-proceed-to-checkout']/a"));
