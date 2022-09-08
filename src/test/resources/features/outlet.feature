@@ -13,3 +13,9 @@ Feature: BonBonite
     Given that enter the web page "https://www.bon-bonite.com/"
     When he clicks on the Outlet option and chooses a product
     Then it should display the output product price information in the console
+
+  @AddProductoToCart
+  Scenario: Add product to shopping cart
+    Given that enter  to the website "https://www.bon-bonite.com/"
+    When he clicks on the outlet module and add the third product to the add to cart
+    Then he will verify that the outlet product is in the shopping cart
