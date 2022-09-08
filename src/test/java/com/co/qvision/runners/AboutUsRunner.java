@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/account.feature",
+        features = "src/test/resources/features/aboutus.feature",
         glue = "com/co/qvision/stepsdefinitions"
 )
-public class AccountRunner {
+public class AboutUsRunner {
 }
