@@ -5,6 +5,8 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
 
+import static com.co.qvision.userinterfaces.LoginPage.TXT_VERIFYIDENTIFICATION;
+
 public class VerifyCorrectLogin implements Question {
 
     //Constructor publico que permite que la clase VerifyCorrectLogin pueda ser instanciada en la clase LoginStepDefinition
@@ -15,6 +17,6 @@ public class VerifyCorrectLogin implements Question {
     //Especificamos traer el texto del campo TXT_VERIFYIDENTIFICATION
     @Override
     public Object answeredBy(Actor actor) {
-        return Text.of(LoginPage.TXT_VERIFYIDENTIFICATION).viewedBy(actor).asString();
+        return TXT_VERIFYIDENTIFICATION.resolveFor(actor).getText();
     }
 }

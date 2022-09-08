@@ -31,6 +31,11 @@ public class CorrectLogin implements Task {
         actor.attemptsTo(Enter.theValue(credentials.getIdentification()).into(LoginPage.TXT_IDENTIFICATION));
         actor.attemptsTo(Enter.theValue(credentials.getPassword()).into(LoginPage.TXT_PASSWORD));
         actor.attemptsTo(Click.on(LoginPage.BTN_ACCESS));
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         System.out.println(Text.of(LoginPage.TXT_VERIFYIDENTIFICATION).viewedBy(actor).asString());
     }
 }

@@ -53,7 +53,7 @@ public class RegisterStepDefinition {
     @Then("^he will be successfully registered$")
     public void heWillBeSuccessfullyRegistered() {
         theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerifyCorrectRegister.inThePage(),
-                Matchers.equalTo("1059234277")));
+                Matchers.equalTo("1059234270")));
     }
 
 

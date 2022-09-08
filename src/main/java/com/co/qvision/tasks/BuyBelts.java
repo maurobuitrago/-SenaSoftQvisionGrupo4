@@ -1,29 +1,26 @@
 package com.co.qvision.tasks;
 
-import com.co.qvision.models.Credentials;
-import com.co.qvision.models.Shoes;
-import com.co.qvision.userinterfaces.LoginPage;
+import com.co.qvision.models.Belts;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Scroll;
-import net.serenitybdd.screenplay.questions.Text;
 
-import static com.co.qvision.userinterfaces.ShoesPage.*;
+import static com.co.qvision.userinterfaces.BeltsBuyPage.*;
 
-public class BuyShoes implements Task {
 
-    //llamamos el modelo Shoes que coniene nuestros datos
-    Shoes dates;
+public class BuyBelts implements Task {
 
-    public BuyShoes(Shoes dates) {
+    Belts dates;
+
+    public BuyBelts(Belts dates) {
         this.dates = dates;
     }
 
-    public static BuyShoes buyShoes(Shoes dates){
-        return Tasks.instrumented(BuyShoes.class, dates);
+    public static BuyBelts buyBelts(Belts dates){
+        return Tasks.instrumented(BuyBelts.class, dates);
     }
 
     @Override
@@ -36,8 +33,7 @@ public class BuyShoes implements Task {
 
         // el actor accede al menu de Zapatos y compra especificamente un tenis
         actor.attemptsTo(Click.on(MENU));
-        actor.attemptsTo(Click.on(MODULE_SHOES));
-        actor.attemptsTo(Click.on(SELECT_TENNIS));
+        actor.attemptsTo(Click.on(MODULE_BELTS));
         actor.attemptsTo(Click.on(SECOND_TARGET));
         actor.attemptsTo(Scroll.to(SELECT_SIZE));
         actor.attemptsTo(Click.on(SELECT_SIZE));
