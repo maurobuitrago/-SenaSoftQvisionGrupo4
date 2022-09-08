@@ -48,4 +48,14 @@ public class OutletPage {
     public static final Target BTN_TO_PAY = Target.the("boton pagar").located(By.xpath("//button[text()='Pagar']"));
     public static final Target VALIDATE_TEXT = Target.the("texto de validacion").located(By.xpath("//*[text()='BON-BONITE']"));
 
+    //Mapeo faltante para agregar producto al carrito
+    public static final Target BTN_ADDTOCART = Target.the("Botón de opción añadir al carrito").located(By.xpath("//button[text()='Añadir al carrito']"));
+    public static final Target BTN_SHOPPINGCART = Target.the("Botón de opción carrito").located(By.xpath("//div[@class='cart']"));
+    public static final Target BTN_SEECART = Target.the("Botón de opción ver carrito").located(By.xpath("//a[text()='Ver carrito']"));
+    public static final Target TXT_VERIFYITEM3 = Target.the("Campo de texto que verifica el nombre del artículo 3").located(By.xpath("//tr/td[3]/a"));
+    public static final Target SELECT_SIZE = Target.the("Coloca la talla que desea").located(By.xpath("//*[@id='pa_talla']"));
+    public static final Target SELECT_NUMBER = Target.the("Selecciona la talla 37").located(By.xpath("//*[@id='pa_talla']/option[5]"));
+
+
+
 }

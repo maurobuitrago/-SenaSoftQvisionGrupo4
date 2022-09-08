@@ -20,10 +20,12 @@ public class AddBagToCart implements Task {
     //Digitamos que acciones son las que realiza el actor
     @Override
     public <T extends Actor> void performAs(T actor) {
+        //El actor agregar el producto en añadir al carrito
         actor.attemptsTo(Click.on(HandbagPage.BTN_HANDBAG));
         actor.attemptsTo(Click.on(HandbagPage.BTN_ITEM3));
         actor.attemptsTo(Scroll.to(HandbagPage.BTN_ADDTOCART));
         actor.attemptsTo(Click.on(HandbagPage.BTN_ADDTOCART));
+        //Tiempo de espera a la pagina
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {

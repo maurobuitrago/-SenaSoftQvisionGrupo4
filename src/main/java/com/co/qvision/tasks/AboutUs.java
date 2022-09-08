@@ -18,6 +18,7 @@ public class AboutUs implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        //el actor extrae la informacion de "Quienes Somos"
         actor.attemptsTo(Scroll.to(BTN_ABOUT_US));
         actor.attemptsTo(Click.on(BTN_ABOUT_US));
         System.out.println(Text.of(TXT_INFO).viewedBy(actor).asString());

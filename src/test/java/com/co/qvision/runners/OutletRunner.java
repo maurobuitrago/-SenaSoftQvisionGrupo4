@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/outlet.feature",
         glue = "com/co/qvision/stepsdefinitions",
         snippets = SnippetType.CAMELCASE,
-        tags = {"@"}
+        tags = {"@AddProductToCart"}
 )
 public class OutletRunner {
 }
