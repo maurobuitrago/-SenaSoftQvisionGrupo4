@@ -1,7 +1,9 @@
 package com.co.qvision.stepsdefinitions;
 
 import com.co.qvision.models.DataAccessories;
+import com.co.qvision.questions.VerifyAddAccessoriesToCart;
 import com.co.qvision.questions.VerifyBuyAccessories;
+import com.co.qvision.tasks.AccessoriesToCart;
 import com.co.qvision.tasks.BuyAccessories;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -57,6 +59,18 @@ public class AccessoriesStepDefinition {
     public void heWillBuyTheAccessoryProductSuccessfully() {
     theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerifyBuyAccessories.inThePage(),
             Matchers.equalTo(Boolean.TRUE)));
+    }
+
+    @When("^he clicks on the accessories module and add the third product to the add to cart module, he will verify that the handbags product is in the shopping cart$")
+    public void heClicksOnTheAccessoriesModuleAndAddTheThirdProductToTheAddToCartModuleHeWillVerifyThatTheHandbagsProductIsInTheShoppingCart() {
+        theActorInTheSpotlight().attemptsTo(AccessoriesToCart.accessoriesToCart());
+    }
+
+
+    @Then("^he will verify that the bag product is in the shopping cart$")
+    public void heWillVerifyThatTheBagProductIsInTheShoppingCart() {
+        theActorInTheSpotlight().should(GivenWhenThen.seeThat(VerifyAddAccessoriesToCart.verifyAddAccessoriesToCart(),
+                Matchers.equalTo(Boolean.TRUE)));
     }
 
 }
